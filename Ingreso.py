@@ -20,9 +20,10 @@ class IngresoApp:
         elif (self.clave.strip() != self.CLAVE_BASE):
             messagebox.showerror("Error", "Clave incorrecta.")
         else:
+            self.ventana_menu.destroy()
             objMenuApp = vm.VentanaMenu()
             objMenuApp.mostrar_menu()
-            #self.cerrar_ventana()
+            
 
     def cerrar_ventana(self):
         self.abrir_menu.destroy()

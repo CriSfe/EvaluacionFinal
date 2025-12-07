@@ -1,7 +1,7 @@
 import tkinter as tk
-import Fase2 as fase2
-import Fase3CristhianQuintero as fase3
-import Fase4CristhianQuinteroHolguinScript as fase4
+from Fase2 import Fase2CristhianHolguin as fase2
+from Fase3 import Fase3CristhianQuintero as fase3
+from Fase4 import Fase4CristhianQuinteroHolguinScript as fase4
 
 class VentanaMenu:
 
@@ -14,9 +14,9 @@ class VentanaMenu:
         proyectFase2.abrir_ventana_registro()
 
     def abrir_fase3(self):
-        parent = None
-        gestor = None
-        proyectFase3 = fase3.VentanaControlUsuario(parent, gestor)
+        #parent = None
+        gestor = fase3.GestorPacientes()
+        proyectFase3 = fase3.VentanaControlUsuario(None, gestor)
         proyectFase3.crear_interfaz()
 
     def abrir_fase4(self):

@@ -32,6 +32,8 @@ class GestionParticipantes:
         #Iniciar con la ventana de validar contraseña
         self.ventana_ingreso()
 
+    
+
 
     def centrar_ventana(self, ventana, ancho, alto):
         ###se Centra la ventana en la pantalla
@@ -42,64 +44,64 @@ class GestionParticipantes:
     #"------------------------------------
     #  1. VENTANA DE INICIO - LOGIN
     # ------------------------------------"
-
+    
     def ventana_ingreso(self):      
-        #Titulo de la ventana
-        titulo = Label(self.root, text="Aplicación: Gestión de Participantes", font=("Verdana", 16, "bold"), fg="#1e5d9b")
-        titulo.pack(pady=10)
-        autor = Label(self.root, text="Autor: Cristhian Fernando Quintero Holguín", font=("Verdana", 10), fg="#1e5d9b")
-        autor.pack(pady=5)
+         #Titulo de la ventana
+         titulo = Label(self.root, text="Aplicación: Gestión de Participantes", font=("Verdana", 16, "bold"), fg="#1e5d9b")
+         titulo.pack(pady=10)
+         autor = Label(self.root, text="Autor: Cristhian Fernando Quintero Holguín", font=("Verdana", 10), fg="#1e5d9b")
+         autor.pack(pady=5)
 
-        # Separador visual
-        separador = Frame(self.root, height=3, bg="gray")
-        separador.pack(fill=X, padx=50, pady=20)
+         # Separador visual
+         separador = Frame(self.root, height=3, bg="gray")
+         separador.pack(fill=X, padx=50, pady=20)
 
-        # Marco para el login
-        marco_login = LabelFrame(self.root, text="Acceder al Sistema", 
-                                font=("Verdana", 12, "bold"), fg="#46627e")
-        marco_login.pack(pady=20, padx=50, fill=X)
+         # Marco para el login
+         marco_login = LabelFrame(self.root, text="Acceder al Sistema", 
+                                 font=("Verdana", 12, "bold"), fg="#46627e")
+         marco_login.pack(pady=20, padx=50, fill=X)
 
-        #Campo de ingreso de la contraseña
-        Label(self.root, text="Contraseña:", font=("Verdana", 12)).pack(pady=(15,7))
+         #Campo de ingreso de la contraseña
+         Label(self.root, text="Contraseña:", font=("Verdana", 12)).pack(pady=(15,7))
 
 
-        #Variable para almacenar la contraseña ingresada
-        self.entrada_contrasena = Entry(marco_login, show="*", font=("Verdana", 12), width=20, justify=CENTER)
-        self.entrada_contrasena.pack(pady=5)
+         #Variable para almacenar la contraseña ingresada
+         self.entrada_contrasena = Entry(marco_login, show="*", font=("Verdana", 12), width=20, justify=CENTER)
+         self.entrada_contrasena.pack(pady=5)
         
-        # Vincular Enter para ingresar
-        self.entrada_contrasena.bind('<Return>', lambda e: self.validar_contrasena())
+         # Vincular Enter para ingresar
+         self.entrada_contrasena.bind('<Return>', lambda e: self.validar_contrasena())
 
-        #Boton Ingreso
-        self.boton_ingreso = Button(marco_login, text="Ingresar", font=("Verdana", 12, "bold"), bg="green", fg="white", command=self.validar_contrasena, cursor="hand2")
-        self.boton_ingreso.pack(pady=15)
+         #Boton Ingreso
+         self.boton_ingreso = Button(marco_login, text="Ingresar", font=("Verdana", 12, "bold"), bg="green", fg="white", command=self.validar_contrasena, cursor="hand2")
+         self.boton_ingreso.pack(pady=15)
         
-        #Etiqueta para mostrar mensajes de éxito
-        self.label_mensaje = Label(self.root, text="", font=("Verdana", 10), fg="green")
-        self.label_mensaje.pack(pady=5)
+         #Etiqueta para mostrar mensajes de éxito
+         self.label_mensaje = Label(self.root, text="", font=("Verdana", 10), fg="green")
+         self.label_mensaje.pack(pady=5)
 
-        #Etiqueta para mostrar mensajes de error
-        self.label_error = Label(self.root, text="", font=("Verdana", 10), fg="red")
-        self.label_error.pack(pady=5)
+         #Etiqueta para mostrar mensajes de error
+         self.label_error = Label(self.root, text="", font=("Verdana", 10), fg="red")
+         self.label_error.pack(pady=5)
 
-        # Enfocar el cursor en el campo de la contraseña al iniciar la ventana
-        self.entrada_contrasena.focus()
+         # Enfocar el cursor en el campo de la contraseña al iniciar la ventana
+         self.entrada_contrasena.focus()
 
 
 
-# Función para validar de la contraseña
+ # Función para validar de la contraseña
     def validar_contrasena(self):
-        contrasena_correcta = "123"
-        contrasena_ingresada = self.entrada_contrasena.get()
+         contrasena_correcta = "123"
+         contrasena_ingresada = self.entrada_contrasena.get()
 
-        if contrasena_ingresada == contrasena_correcta:
-            self.label_mensaje.config(text="Acceso concedido", fg="green")
-            self.root.after(500, self.abrir_ventana_registro) #Esperar y se abre el formulario de registro
-        else:
-            self.label_error.config(text="Contraseña incorrecta. Inténtalo de nuevo.", fg="red")
-            self.entrada_contrasena.delete(0, END)
-            self.entrada_contrasena.focus()    
-
+         if contrasena_ingresada == contrasena_correcta:
+             self.label_mensaje.config(text="Acceso concedido", fg="green")
+             self.root.after(500, self.abrir_ventana_registro) #Esperar y se abre el formulario de registro
+         else:
+             self.label_error.config(text="Contraseña incorrecta. Inténtalo de nuevo.", fg="red")
+             self.entrada_contrasena.delete(0, END)
+             self.entrada_contrasena.focus()
+        
     #"-------------------------------------------
     # 2. VENTANA DE REGISTRO DE ESTUDIANTES 
     # -------------------------------------------"
@@ -144,7 +146,7 @@ class GestionParticipantes:
         marco_formulario.pack(pady=20, padx=20, fill=BOTH, expand=True)
         
         # 1. Identificación
-        Label(marco_formulario, text="Identificación:",
+        Label(marco_formulario, text="Identificacion:",
                font=("Verdana", 12, "bold")).grid(row=0, column=0, sticky=E, padx=(0,10), pady=8)
         self.entrada_identificacion = Entry(marco_formulario, font=("Verdana", 12), width=25)
         self.entrada_identificacion.grid(row=0, column=1, pady=8, sticky=W)
@@ -276,7 +278,7 @@ class GestionParticipantes:
 
             #Verificar que no se repita un estudiante
             for est in self.estudiantes:
-                if est['identificación'] == estudiante['identificacion']:
+                if est['identificacion'] == estudiante['identificacion']:
                     messagebox.showerror("Error", f"El estudiante que intentas ingresar ya está registrado: {estudiante['identificacion']}")
                     return
                 
@@ -294,10 +296,14 @@ class GestionParticipantes:
 ###Mostrar el reporte del ultimo estudiante que se haya registrado y el coste total
     def mostrar_reporte(self):
         #Verifica que haya estudiantes registrados
-        if not self.validar_campos():
+        if not self.estudiantes:
+            messagebox.showerror("Error", "No hay estudiantes registrados para mostrar el reporte.")
             return
         
         try:
+            #obtener el ultimo estudiante registrado
+            ultimo_estudiante = self.estudiantes[-1]
+
             #"---- Se obtiene los datos con los datos actuales----------"
             identificacion = self.entrada_identificacion.get().strip()
             nombre = self.entrada_nombre.get().strip()
@@ -425,5 +431,5 @@ if __name__ == "__main__":
     print("-" * 50)
 
     app = GestionParticipantes()
-    app.ejecutar()
+    app.ventana_ingreso()
     
