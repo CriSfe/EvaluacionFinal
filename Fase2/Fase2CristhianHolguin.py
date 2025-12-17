@@ -302,16 +302,26 @@ class GestionParticipantes:
         
         try:
             #obtener el ultimo estudiante registrado
-            ultimo_estudiante = self.estudiantes[-1]
+            ultimo = self.estudiantes[-1]
+
+            identificacion = ultimo['identificacion']
+            nombre = ultimo['nombre']
+            genero = ultimo['genero']
+            tecnica = ultimo['tecnica_artistica']
+            costo_clase = ultimo['costo_por_clase']
+            numero_clases = ultimo['numero_clases']
+
+            total_pagar = costo_clase * numero_clases
+
 
             #"---- Se obtiene los datos con los datos actuales----------"
-            identificacion = self.entrada_identificacion.get().strip()
-            nombre = self.entrada_nombre.get().strip()
-            genero = "Masculino" if self.genero_var.get() == 1 else "Femenino"
-            tecnica = self.tecnica_artistica_dropdown.get()
-            costo_clase = self.tecnicas_artisticas_costos[tecnica]
-            numero_clases = int(self.spin_clases.get())
-            total_pagar = costo_clase * numero_clases
+            #identificacion = self.entrada_identificacion.get().strip()
+            #nombre = self.entrada_nombre.get().strip()
+            #genero = "Masculino" if self.genero_var.get() == 1 else "Femenino"
+            #tecnica = self.tecnica_artistica_dropdown.get()
+            #costo_clase = self.tecnicas_artisticas_costos[tecnica]
+            #numero_clases = int(self.spin_clases.get())
+            #total_pagar = costo_clase * numero_clases
 
 
             #"----------------Crear la ventana de reporte------------------"
@@ -431,5 +441,5 @@ if __name__ == "__main__":
     print("-" * 50)
 
     app = GestionParticipantes()
-    app.ventana_ingreso()
+    app.ejecutar()
     

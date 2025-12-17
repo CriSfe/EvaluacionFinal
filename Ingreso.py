@@ -53,7 +53,7 @@ class IngresoApp:
         self.ventana_menu.geometry(f"{ancho_ventana}x{alto_ventana}+{x}+{y}")
 
         #Titulo principal del ventana ingreso
-        titulo_menu = ttk.Label(self.ventana_menu, text="Menú de al Sistema", font=("Arial", 16))
+        titulo_menu = ttk.Label(self.ventana_menu, text="Menú de ingreso al Sistema", font=("Arial", 16))
         titulo_menu.pack(pady=20)
 
         #Elementos del menú

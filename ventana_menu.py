@@ -72,7 +72,7 @@ class VentanaMenu:
         botonFase4.grid(row=2, column=1, padx=5, pady=10, sticky="e")
 
         #Boton para salir de la aplicación
-        botonSalir = tk.Button(ventana, text="Salir", width=10, bg="brown3", command=ventana.quit)
+        botonSalir = tk.Button(ventana, text="Salir", width=10, bg="brown3", command=ventana.destroy)
         botonSalir.pack(pady=10)
     
         ventana.mainloop()
